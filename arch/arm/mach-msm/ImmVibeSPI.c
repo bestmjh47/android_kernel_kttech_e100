@@ -56,7 +56,7 @@
 
 /* Variable defined to allow for tuning of the handset. */
 
-// ÇöÀç´Â Áö¿øµÇÁö ¾Ê´Â lib 
+// í˜„ì¬ëŠ” ì§€ì›ë˜ì§€ ì•ŠëŠ” lib 
 #define	VIBE_FALSE false
 #define VIBE_TRUE	true
 
@@ -402,7 +402,7 @@ IMMVIBESPIAPI VibeStatus ImmVibeSPI_ForceOut_SetSamples(VibeUInt8 nActuatorIndex
 	}
 	else
 	{
-		/*  immersion ¿¡¼­  ¿À´Â  nForce °ªÀº   O7  motor ÀÇ °æ¿ì ... -127 ~ +127   : O6 °°Àº  linear  motor ´Â  °¡´ÉÇÏÁö¸¸.... O7 Àº  À½¼ö..==0  ~  127  */	
+		/*  immersion ì—ì„œ  ì˜¤ëŠ”  nForce ê°’ì€   O7  motor ì˜ ê²½ìš° ... -127 ~ +127   : O6 ê°™ì€  linear  motor ëŠ”  ê°€ëŠ¥í•˜ì§€ë§Œ.... O7 ì€  ìŒìˆ˜..==0  ~  127  */	
 		nForce = nForce - 61;
 		g_nForce_32 = nForce*4;
 
