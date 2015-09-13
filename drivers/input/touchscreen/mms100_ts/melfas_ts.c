@@ -62,7 +62,7 @@
 #define SET_DOWNLOAD_BY_GPIO	1
 
 #if SET_DOWNLOAD_BY_GPIO
-#include <MMS100A_Config_Updater.h>
+#include "MMS100A_Config_Updater.h"
 struct i2c_client *download_client;
 #endif // SET_DOWNLOAD_BY_GPIO
 

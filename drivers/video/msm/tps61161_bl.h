@@ -1,8 +1,8 @@
 #ifndef TPS61161_BL_CTRL_KTTECH_H
 #define TPS61161_BL_CTRL_KTTECH_H
 
-#include <tps61161_pwm_bl.h>
-#include <tps61161_easyscale_bl.h>
+#include "tps61161_pwm_bl.h"
+#include "tps61161_easyscale_bl.h"
 
 /*===========================================================================
   FUNCTIONS PROTOTYPES

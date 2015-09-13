@@ -37,7 +37,7 @@
 #include <mach/vreg.h>
 #include <mach/gpio.h>
 #include <mach/clk.h>
-#include <tspdrv.h>
+#include "tspdrv.h"
 // patch-1030 , remove for compile error - #include "pm.h"
 // patch-1031 , remove for compile error - #include <mach/pm.h>
 #include <mach/msm_iomap.h>
