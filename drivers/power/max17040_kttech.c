@@ -31,7 +31,7 @@ int max17040_get_temperature(void);
  *
  * RCOMP = 0xB700, FullSoc = 98.45, EmptySoc = 1.68, 18bit mode
  *
- * ¾÷Ã¼¿¡¼­ Àü´Ş ¹ŞÀº ¹èÅÍ¸® ¸ğµ¨ °ªÀÌ 19BITÀÏ °æ¿ì Feature »èÁ¦
+ * ì—…ì²´ì—ì„œ ì „ë‹¬ ë°›ì€ ë°°í„°ë¦¬ ëª¨ë¸ ê°’ì´ 19BITì¼ ê²½ìš° Feature ì‚­ì œ
 ***************************************************************************/
 //#define KTTECH_MAXIM_BATT_MODEL_18BIT 
 
@@ -203,7 +203,7 @@ static int max17040_update_rcomp(int batt_temp)
 
 static int max17040_need_to_update_rcomp(int batt_temp)
 {
-	#define UPDATE_CONDITION  30   // 3¡É
+	#define UPDATE_CONDITION  30   // 3â„ƒ
 	#define INVALID_BATT_TEMP  -300
 		
 	static int latest_temp = 200;         // starting temperature
