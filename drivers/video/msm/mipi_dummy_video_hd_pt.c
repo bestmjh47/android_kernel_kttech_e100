@@ -152,7 +152,7 @@ static int __init mipi_video_dummy_hd_pt_init(void)
 	pinfo.mipi.hfp_power_stop = TRUE;
 	pinfo.mipi.hbp_power_stop = TRUE;
 	pinfo.mipi.hsa_power_stop = TRUE;
-	pinfo.mipi.eof_bllp_power_stop = 0; //lcd ∂≥∏≤ «ˆªÛ ¡¶∞≈ 
+	pinfo.mipi.eof_bllp_power_stop = 0; //lcd Îñ®Î¶º ÌòÑÏÉÅ Ï†úÍ±∞ 
 	pinfo.mipi.bllp_power_stop = 0;  /* Needed or else will have blank line at top of display */
 	pinfo.mipi.traffic_mode = DSI_BURST_MODE;
 	pinfo.mipi.dst_format = DSI_VIDEO_DST_FORMAT_RGB888;
