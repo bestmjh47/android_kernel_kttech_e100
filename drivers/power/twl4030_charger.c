@@ -1,7 +1,7 @@
 /*
  * TWL4030/TPS65950 BCI (Battery Charger Interface) driver
  *
- * Copyright (C) 2010 Gražvydas Ignotas <notasas@gmail.com>
+ * Copyright (C) 2010 Gra탑vydas Ignotas <notasas@gmail.com>
  *
  * based on twl4030_bci_battery.c by TI
  * Copyright (C) 2008 Texas Instruments, Inc.
@@ -572,7 +572,7 @@ static void __exit twl4030_bci_exit(void)
 }
 module_exit(twl4030_bci_exit);
 
-MODULE_AUTHOR("Gražvydas Ignotas");
+MODULE_AUTHOR("Gra탑vydas Ignotas");
 MODULE_DESCRIPTION("TWL4030 Battery Charger Interface driver");
 MODULE_LICENSE("GPL");
 MODULE_ALIAS("platform:twl4030_bci");

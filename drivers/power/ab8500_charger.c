@@ -2321,7 +2321,7 @@ static int ab8500_charger_init_hw_registers(struct ab8500_charger *di)
 	/*
 	 * Due to internal synchronisation, Enable and Kick watchdog bits
 	 * cannot be enabled in a single write.
-	 * A minimum delay of 2*32 kHz period (62.5µs) must be inserted
+	 * A minimum delay of 2*32 kHz period (62.5쨉s) must be inserted
 	 * between writing Enable then Kick bits.
 	 */
 	udelay(63);
