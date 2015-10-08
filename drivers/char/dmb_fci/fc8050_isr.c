@@ -42,7 +42,7 @@ void fc8050_isr(HANDLE hDevice)
   int mfInt_one = 0;
 
   //2011.11.18 - FCI Vincent, External Interrupt Disable
-  //bbm_write(hDevice, BBM_COM_INT_ENABLE, 0); // kuzuri del 2011.11.21 - È­¸é ¸ØÃã Çö»ó(SPI.error) ¹ß»ı!!!
+  //bbm_write(hDevice, BBM_COM_INT_ENABLE, 0); // kuzuri del 2011.11.21 - í™”ë©´ ë©ˆì¶¤ í˜„ìƒ(SPI.error) ë°œìƒ!!!
   ret_val = bbm_read(hDevice, BBM_COM_INT_STATUS, &extIntStatus);
   bbm_write(hDevice, BBM_COM_INT_STATUS, extIntStatus);
   bbm_write(hDevice, BBM_COM_INT_STATUS, 0x00);
@@ -64,7 +64,7 @@ void fc8050_isr(HANDLE hDevice)
       if(size-1)
       {
         ret_val = bbm_data(hDevice, BBM_COM_FIC_DATA, &ficBuffer[0], size);
-        // kuzuri 2011.12.02 - bbm_data fail ÀÏ °æ¿ì, ¾Æ·¡ FicCallback ¿¡¼­ Kernel panic ¹ß»ıÇÔ. extIntStatus=1, mfIntStatus = 0x100 ÀÎ °æ¿ì ¹®Á¦µÊ.
+        // kuzuri 2011.12.02 - bbm_data fail ì¼ ê²½ìš°, ì•„ë˜ FicCallback ì—ì„œ Kernel panic ë°œìƒí•¨. extIntStatus=1, mfIntStatus = 0x100 ì¸ ê²½ìš° ë¬¸ì œë¨.
         if ( ret_val!=0 )
         {
           DEVLOG(KERN_ERR "Error_____ FC8050_ISR()--- bbm_data read FAIL.. clear isr.\n");
@@ -73,7 +73,7 @@ void fc8050_isr(HANDLE hDevice)
         else
         {
           if(pFicCallback) 
-            (*pFicCallback)(hDevice, &ficBuffer[2], size);  // kuzuri 2011.12.02 - spi_readburst ÇÔ¼ö ¼öÁ¤.
+            (*pFicCallback)(hDevice, &ficBuffer[2], size);  // kuzuri 2011.12.02 - spi_readburst í•¨ìˆ˜ ìˆ˜ì •.
             //(*pFicCallback)(hDevice, &ficBuffer[4], size);
         }
       } 
@@ -121,7 +121,7 @@ void fc8050_isr(HANDLE hDevice)
             CHECK_RET(3)
 
             if(pMscCallback)
-              (*pMscCallback)(hDevice, subChId, &mscBuffer[2], size);  // kuzuri 2011.12.02 - spi_readburst ÇÔ¼ö ¼öÁ¤.
+              (*pMscCallback)(hDevice, subChId, &mscBuffer[2], size);  // kuzuri 2011.12.02 - spi_readburst í•¨ìˆ˜ ìˆ˜ì •.
               //(*pMscCallback)(hDevice, subChId, &mscBuffer[4], size);
           }
         }
@@ -157,6 +157,6 @@ void fc8050_isr(HANDLE hDevice)
 	}
 #endif
 	//2011.11.18 - FCI Vincent External Interrupt Enable	
-	//bbm_write(hDevice, BBM_COM_INT_ENABLE, BBM_MF_INT);  // kuzuri del 2011.11.21 - È­¸é ¸ØÃã Çö»ó(SPI.error) ¹ß»ı!!!
+	//bbm_write(hDevice, BBM_COM_INT_ENABLE, BBM_MF_INT);  // kuzuri del 2011.11.21 - í™”ë©´ ë©ˆì¶¤ í˜„ìƒ(SPI.error) ë°œìƒ!!!
 }
 

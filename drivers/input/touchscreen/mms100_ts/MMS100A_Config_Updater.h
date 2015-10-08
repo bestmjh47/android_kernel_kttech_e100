@@ -1,7 +1,7 @@
 /*
- * MMS100A Config UpdaterÀÇ public Çì´õÀÔ´Ï´Ù.
- * !!ÁÖÀÇ!!
- * ³»¿ëÀ» ¼öÁ¤ÇÏ½Ã¸é ¾ÈµË´Ï´Ù.
+ * MMS100A Config Updaterì˜ public í—¤ë”ì…ë‹ˆë‹¤.
+ * !!ì£¼ì˜!!
+ * ë‚´ìš©ì„ ìˆ˜ì •í•˜ì‹œë©´ ì•ˆë©ë‹ˆë‹¤.
  */
 #ifndef __MMS100A_CONFIG_UPDATER_H__
 #define __MMS100A_CONFIG_UPDATER_H__

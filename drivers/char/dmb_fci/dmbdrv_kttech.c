@@ -773,7 +773,7 @@ unsigned char DMBDrv_ScanCh(unsigned long ulFrequency)
 //  	BBM_WRITE(NULL, BBM_COM_INT_ENABLE, 0); // kuzuri.11.25
 
 //2012.07.06
-//  ÁÖÆÄ¼ö ¼³Á¤ ÈÄ ÀÎÅÍ·´Æ® enable ÇÏµµ·Ï ¼öÁ¤ 
+//  ì£¼íŒŒìˆ˜ ì„¤ì • í›„ ì¸í„°ëŸ½íŠ¸ enable í•˜ë„ë¡ ìˆ˜ì • 
 //	BBM_WORD_WRITE(NULL, BBM_BUF_INT, 0x01ff); 
 
 	if(BBM_TUNER_SET_FREQ(NULL, ulFrequency)) {
@@ -785,8 +785,8 @@ unsigned char DMBDrv_ScanCh(unsigned long ulFrequency)
 	} 
 
 //2012.07.06
-//BBM_TUNER_SET_FREQ È£Ãâ Àü¿¡ ÀÎÅÍ·´Æ®¸¦ enableÇÏ¸é °£ÇæÀûÀ¸·Î ÀÌÀü ÁÖÆÄ¼ö °á°ú°¡ ÀÎÅÍ·´Æ®·Î ¹ß»ıÇÏ¿© 
-//ÁÖÆÄ¼ö ¼³Á¤ ÈÄ ÀÎÅÍ·´Æ® enable ÇÏµµ·Ï ¼öÁ¤ 
+//BBM_TUNER_SET_FREQ í˜¸ì¶œ ì „ì— ì¸í„°ëŸ½íŠ¸ë¥¼ enableí•˜ë©´ ê°„í—ì ìœ¼ë¡œ ì´ì „ ì£¼íŒŒìˆ˜ ê²°ê³¼ê°€ ì¸í„°ëŸ½íŠ¸ë¡œ ë°œìƒí•˜ì—¬ 
+//ì£¼íŒŒìˆ˜ ì„¤ì • í›„ ì¸í„°ëŸ½íŠ¸ enable í•˜ë„ë¡ ìˆ˜ì • 
 	BBM_WORD_WRITE(NULL, BBM_BUF_INT, 0x01ff); 
 
 	if(BBM_SCAN_STATUS(NULL)) {
@@ -1527,7 +1527,7 @@ static long dmbdev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
         dmb_kthread = kthread_run(dmb_thread, (void*)hInit, "dmb_thread");
       }
       #endif
-	  //2011.11.28 vincent »èÁ¦ ÇÊ¿ä
+	  //2011.11.28 vincent ì‚­ì œ í•„ìš”
       //msleep(150); // 2011.06.28_temp
 
 
