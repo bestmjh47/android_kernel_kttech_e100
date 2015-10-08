@@ -1,41 +1,41 @@
 /*
- * MMS100A Config Updater¸¦ customizeÇÏ±â À§ÇÑ ¼Ò½ºÀÔ´Ï´Ù.
- * Æ÷ÆÃÀ» À§ÇØ ¼öÁ¤ÇÏ¼Å¾ß ÇÏ´Â ¼Ò½ºÀÔ´Ï´Ù.
+ * MMS100A Config Updaterë¥¼ customizeí•˜ê¸° ìœ„í•œ ì†ŒìŠ¤ì…ë‹ˆë‹¤.
+ * í¬íŒ…ì„ ìœ„í•´ ìˆ˜ì •í•˜ì…”ì•¼ í•˜ëŠ” ì†ŒìŠ¤ì…ë‹ˆë‹¤.
  */
 #include "MMS100A_Config_Updater_Customize.h"
 
 /*
- *  TODO: Åë½Å¿¡ »ç¿ëÇÏ´Â slave address¸¦ ±â·ÏÇØ ÁÖ¼¼¿ä.
- * !! ÁÖÀÇ¸¦ ºÎÅ¹µå¸³´Ï´Ù !!
- * Config ½ÇÆĞ ½Ã »ç¿ëµÇ´Â default slave address´Â 0x48 ÀÔ´Ï´Ù.
- * ÇØ´ç slave address¸¦ »ç¿ëÇÏ´Â I2C slave device°¡ ¾ø´ÂÁö È®ÀÎÇØ ÁÖ½Ã°í,
- * ¸¸ÀÏ ÀÖ´Ù¸é MMM100A¸¦ ´Ù¿î·Îµå ÇÒ ¶§´Â ÇØ´ç slave device¸¦ disable ½ÃÄÑ ÁÖ½Ê½Ã¿À.
+ *  TODO: í†µì‹ ì— ì‚¬ìš©í•˜ëŠ” slave addressë¥¼ ê¸°ë¡í•´ ì£¼ì„¸ìš”.
+ * !! ì£¼ì˜ë¥¼ ë¶€íƒë“œë¦½ë‹ˆë‹¤ !!
+ * Config ì‹¤íŒ¨ ì‹œ ì‚¬ìš©ë˜ëŠ” default slave addressëŠ” 0x48 ì…ë‹ˆë‹¤.
+ * í•´ë‹¹ slave addressë¥¼ ì‚¬ìš©í•˜ëŠ” I2C slave deviceê°€ ì—†ëŠ”ì§€ í™•ì¸í•´ ì£¼ì‹œê³ ,
+ * ë§Œì¼ ìˆë‹¤ë©´ MMM100Aë¥¼ ë‹¤ìš´ë¡œë“œ í•  ë•ŒëŠ” í•´ë‹¹ slave deviceë¥¼ disable ì‹œì¼œ ì£¼ì‹­ì‹œì˜¤.
  */
 const unsigned char mfs_i2c_slave_addr = 0x48;
 
 /*
- * TODO: .mbin fileÀÇ °æ·Î¸¦ ¼³Á¤ÇØ ÁÖ¼¼¿ä.
- * ¸¶Áö¸· °æ·Î Ç¥½Ã¹®ÀÚ(e.g. slash)¸¦ ÇÔ²² ÀÔ·ÂÇØ ÁÖ¼¼¿ä.
+ * TODO: .mbin fileì˜ ê²½ë¡œë¥¼ ì„¤ì •í•´ ì£¼ì„¸ìš”.
+ * ë§ˆì§€ë§‰ ê²½ë¡œ í‘œì‹œë¬¸ì(e.g. slash)ë¥¼ í•¨ê»˜ ì…ë ¥í•´ ì£¼ì„¸ìš”.
  */
 char* mfs_mbin_path = "./";
 
 /*
- * TODO: .mbinÀ» Á¦¿ÜÇÑ °¢sectionÀÇ filenameÀ» ¼³Á¤ÇØ ÁÖ¼¼¿ä.
+ * TODO: .mbinì„ ì œì™¸í•œ ê°sectionì˜ filenameì„ ì„¤ì •í•´ ì£¼ì„¸ìš”.
  */
 
 char section_filename[MFS_SECTION_][255] =
 { "BOOT", "CORE", "PRIV", "PUBL" };
 
-/*ÇöÀç settingµÈ slave address¸¦ ¾Ë°í ½ÍÀ» ¶§ ÂüÁ¶ÇÏ¼¼¿ä.*/
+/*í˜„ì¬ settingëœ slave addressë¥¼ ì•Œê³  ì‹¶ì„ ë•Œ ì°¸ì¡°í•˜ì„¸ìš”.*/
 uint8_t mfs_slave_addr;
 
 mfs_bool_t MFS_I2C_set_slave_addr(unsigned char _slave_addr)
 {
 //namjja : change download addr
-//	mfs_slave_addr = _slave_addr << 1; /*¼öÁ¤ÇÏÁö ¸¶½Ê½Ã¿À.*/
-	mfs_slave_addr = _slave_addr; /*¼öÁ¤ÇÏÁö ¸¶½Ê½Ã¿À.*/
+//	mfs_slave_addr = _slave_addr << 1; /*ìˆ˜ì •í•˜ì§€ ë§ˆì‹­ì‹œì˜¤.*/
+	mfs_slave_addr = _slave_addr; /*ìˆ˜ì •í•˜ì§€ ë§ˆì‹­ì‹œì˜¤.*/
 
-	/* TODO: I2C slave address¸¦ ¼ÂÆÃÇØ ÁÖ¼¼¿ä. */
+	/* TODO: I2C slave addressë¥¼ ì…‹íŒ…í•´ ì£¼ì„¸ìš”. */
 
 	return MFS_TRUE;
 }
@@ -43,7 +43,7 @@ mfs_bool_t MFS_I2C_set_slave_addr(unsigned char _slave_addr)
 mfs_bool_t MFS_I2C_read_with_addr(unsigned char* _read_buf, unsigned char _addr,
 		int _length)
 {
-	/* TODO: I2C·Î 1 byte address¸¦ ¾´ ÈÄ _length °¹¼ö¸¸Å­ ÀĞ¾î _read_buf¿¡ Ã¤¿ö ÁÖ¼¼¿ä. */
+	/* TODO: I2Cë¡œ 1 byte addressë¥¼ ì“´ í›„ _length ê°¯ìˆ˜ë§Œí¼ ì½ì–´ _read_bufì— ì±„ì›Œ ì£¼ì„¸ìš”. */
 	if (!melfas_write(mfs_slave_addr, &_addr, 1))
 		return MFS_FALSE;
 	if (!melfas_read(mfs_slave_addr, _read_buf, _length))
@@ -56,9 +56,9 @@ mfs_bool_t MFS_I2C_read_with_addr(unsigned char* _read_buf, unsigned char _addr,
 mfs_bool_t MFS_I2C_write(unsigned char* _write_buf, int _length)
 {
 	/*
-	 * TODO: I2C·Î _write_bufÀÇ ³»¿ëÀ» _length °¹¼ö¸¸Å­ ½á ÁÖ¼¼¿ä.
-	 * address¸¦ ¸í½ÃÇØ¾ß ÇÏ´Â ÀÎÅÍÆäÀÌ½ºÀÇ °æ¿ì, _write_buf[0]ÀÌ address°¡ µÇ°í
-	 * _write_buf+1ºÎÅÍ _length-1°³¸¦ ½á ÁÖ½Ã¸é µË´Ï´Ù.
+	 * TODO: I2Cë¡œ _write_bufì˜ ë‚´ìš©ì„ _length ê°¯ìˆ˜ë§Œí¼ ì¨ ì£¼ì„¸ìš”.
+	 * addressë¥¼ ëª…ì‹œí•´ì•¼ í•˜ëŠ” ì¸í„°í˜ì´ìŠ¤ì˜ ê²½ìš°, _write_buf[0]ì´ addressê°€ ë˜ê³ 
+	 * _write_buf+1ë¶€í„° _length-1ê°œë¥¼ ì¨ ì£¼ì‹œë©´ ë©ë‹ˆë‹¤.
 	 */
 	if (!melfas_write(mfs_slave_addr, _write_buf, _length))
 		return MFS_FALSE;

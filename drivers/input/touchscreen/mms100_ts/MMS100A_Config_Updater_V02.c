@@ -1,7 +1,7 @@
 /*
- * MMS100A Config UpdaterÀÇ ¾Ë°í¸®µëÀÌ ±¸ÇöµÈ ºÎºĞÀÔ´Ï´Ù.
- * !!ÁÖÀÇ!!
- * ³»¿ëÀ» ¼öÁ¤ÇÏ½Ã¸é ¾ÈµË´Ï´Ù.
+ * MMS100A Config Updaterì˜ ì•Œê³ ë¦¬ë“¬ì´ êµ¬í˜„ëœ ë¶€ë¶„ì…ë‹ˆë‹¤.
+ * !!ì£¼ì˜!!
+ * ë‚´ìš©ì„ ìˆ˜ì •í•˜ì‹œë©´ ì•ˆë©ë‹ˆë‹¤.
  */
 #include "MMS100A_Config_Updater_Customize.h"
 #include "BOOT_120529_v28.c"
@@ -112,10 +112,10 @@ int MFS_config_update(unsigned char _slave_addr)
 
 	buf =  kmalloc(PACKET_, GFP_KERNEL);
 
-	/*Config ¸ğµå ÁøÀÔ Àü¿¡´Â ¼³Á¤µÈ slave address¸¦ »ç¿ë.*/
+	/*Config ëª¨ë“œ ì§„ì… ì „ì—ëŠ” ì„¤ì •ëœ slave addressë¥¼ ì‚¬ìš©.*/
 	MFS_I2C_set_slave_addr(mfs_i2c_slave_addr);
 
-	/* I2C Åë½ÅÀ» ½ÃµµÇÏ¿© ½ÇÆĞÇÏ¸é config recovery mode·Î º¸¾Æ slave address¸¦ default value·Î º¯°æ */
+	/* I2C í†µì‹ ì„ ì‹œë„í•˜ì—¬ ì‹¤íŒ¨í•˜ë©´ config recovery modeë¡œ ë³´ì•„ slave addressë¥¼ default valueë¡œ ë³€ê²½ */
 	if (is_config_recovery_mode())
 		MFS_I2C_set_slave_addr(MFS_DEFAULT_SLAVE_ADDR);
 	//old firmware version check
@@ -139,7 +139,7 @@ int MFS_config_update(unsigned char _slave_addr)
 	if ((ret = enter_ISC_mode()) && ret != MRET_SUCCESS)
 		goto MCSDL_DOWNLOAD_FINISH;
 
-	/*Config ¸ğµå ÁøÀÔ ÈÄ slave address¸¦ default value·Î º¯°æ.*/
+	/*Config ëª¨ë“œ ì§„ì… í›„ slave addressë¥¼ default valueë¡œ ë³€ê²½.*/
 	MFS_I2C_set_slave_addr(MFS_DEFAULT_SLAVE_ADDR);
 
 	if ((ret = enter_config_update_mode()) && ret != MRET_SUCCESS)
@@ -168,7 +168,7 @@ int MFS_config_update(unsigned char _slave_addr)
 
 	MFS_I2C_set_slave_addr(mfs_i2c_slave_addr);
 
-	// Reboot ÇØ¾ß ÇÕ´Ï´Ù!!!
+	// Reboot í•´ì•¼ í•©ë‹ˆë‹¤!!!
 	melfas_power(0);
 	MFS_ms_delay(1000);
 	melfas_power(1);
@@ -179,7 +179,7 @@ static mfs_bool_t is_config_recovery_mode(void)
 {
 	unsigned char rb;
 	if (!MFS_I2C_read_with_addr(&rb, ISC_ADDR_VERSION, 1))
-		return MFS_TRUE; //Fail ½Ã recovery mode·Î ÀÎ½Ä.
+		return MFS_TRUE; //Fail ì‹œ recovery modeë¡œ ì¸ì‹.
 	return MFS_FALSE;
 }
 
@@ -202,7 +202,7 @@ eMFSRet_t MFS_config_validate(void)
 {
 	int i;
 	eMFSRet_t ret;
-	//TODO: ¼³Á¤µÈ I2C slave address·Î versionÀ» ÀĞ¾î¼­ Á¤»ó ´Ù¿î·Îµå ¿©ºÎ¸¦ È®ÀÎ!
+	//TODO: ì„¤ì •ëœ I2C slave addressë¡œ versionì„ ì½ì–´ì„œ ì •ìƒ ë‹¤ìš´ë¡œë“œ ì—¬ë¶€ë¥¼ í™•ì¸!
 	MFS_I2C_set_slave_addr(mfs_i2c_slave_addr);
 
 	if ((ret = read_old_firm_info()) && ret != MRET_SUCCESS)
@@ -403,7 +403,7 @@ static eMFSRet_t clear_validate_markers(const mfs_bool_t update[MFS_SECTION_])
 					break;
 				}
 			/*
-			 * old infoÀÇ marker section ¿Ü¿¡ Ãß°¡µÈ marker sectionÀ» erase.
+			 * old infoì˜ marker section ì™¸ì— ì¶”ê°€ëœ marker sectionì„ erase.
 			 */
 			if (!same_addr)
 			{

@@ -1,7 +1,7 @@
 /*
- * MMS100A Config Updater의 public 헤더입니다.
- * !!주의!!
- * 내용을 수정하시면 안됩니다.
+ * MMS100A Config Updater public ㅻ
+ * !!二쇱!!
+ * 댁⑹ 硫⑸
  */
 #ifndef __MMS100A_CONFIG_UPDATER_H__
 #define __MMS100A_CONFIG_UPDATER_H__

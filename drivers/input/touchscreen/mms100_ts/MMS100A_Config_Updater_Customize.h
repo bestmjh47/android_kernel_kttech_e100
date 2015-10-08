@@ -1,14 +1,14 @@
 /*
- * MMS100A Config Updater¸¦ customizeÇÏ±â À§ÇÑ Çì´õÀÔ´Ï´Ù.
- * Æ÷ÆÃÀ» À§ÇØ ¼öÁ¤ÇÏ¼Å¾ß ÇÏ´Â Çì´õÀÔ´Ï´Ù.
+ * MMS100A Config Updaterë¥¼ customizeí•˜ê¸° ìœ„í•œ í—¤ë”ì…ë‹ˆë‹¤.
+ * í¬íŒ…ì„ ìœ„í•´ ìˆ˜ì •í•˜ì…”ì•¼ í•˜ëŠ” í—¤ë”ì…ë‹ˆë‹¤.
  */
 #ifndef __MMS100A_CONFIG_UPDATER_CUSTOMIZE_H__
 #define __MMS100A_CONFIG_UPDATER_CUSTOMIZE_H__
 
 /*
- * TODO: ÇÊ¿äÇÑ header ÆÄÀÏÀ» includeÇØ ÁÖ¼¼¿ä.
- * ÇÊ¿äÇÑ ÀÎÅÍÆäÀÌ½º´Â ¾Æ·¡¿Í °°½À´Ï´Ù.
- * memset, malloc, free, strcmp, strstr, µğ¹ö±× ¸Ş¼¼Áö¸¦ À§ÇÑ ÇÔ¼ö µî.
+ * TODO: í•„ìš”í•œ header íŒŒì¼ì„ includeí•´ ì£¼ì„¸ìš”.
+ * í•„ìš”í•œ ì¸í„°í˜ì´ìŠ¤ëŠ” ì•„ë˜ì™€ ê°™ìŠµë‹ˆë‹¤.
+ * memset, malloc, free, strcmp, strstr, ë””ë²„ê·¸ ë©”ì„¸ì§€ë¥¼ ìœ„í•œ í•¨ìˆ˜ ë“±.
  */
 #if 0
 #include <stdio.h>
@@ -30,8 +30,8 @@
 //#include "PUBL.h"
 
 /*
- * Boolean °ü·Ã type ¹× define.
- * ±×´ë·Î µÎ¼Åµµ µÇ°í, system¿¡ ¸Â°Ô °íÃÄ ÁÖ¼Åµµ µË´Ï´Ù.
+ * Boolean ê´€ë ¨ type ë° define.
+ * ê·¸ëŒ€ë¡œ ë‘ì…”ë„ ë˜ê³ , systemì— ë§ê²Œ ê³ ì³ ì£¼ì…”ë„ ë©ë‹ˆë‹¤.
  */
 typedef int mfs_bool_t;
 #define MFS_TRUE		(0==0)
