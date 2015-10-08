@@ -4,7 +4,7 @@
  * Copyright (C) 2008 Rodolfo Giometti <giometti@linux.it>
  * Copyright (C) 2008 Eurotech S.p.A. <info@eurotech.it>
  * Copyright (C) 2010-2011 Lars-Peter Clausen <lars@metafoo.de>
- * Copyright (C) 2011 Pali Roh찼r <pali.rohar@gmail.com>
+ * Copyright (C) 2011 Pali Rohár <pali.rohar@gmail.com>
  *
  * Based on a previous work by Copyright (C) 2008 Texas Instruments, Inc.
  *
@@ -160,7 +160,7 @@ static int bq27x00_battery_read_rsoc(struct bq27x00_device_info *di)
 }
 
 /*
- * Return a battery charge value in 쨉Ah
+ * Return a battery charge value in µAh
  * Or < 0 if something fails.
  */
 static int bq27x00_battery_read_charge(struct bq27x00_device_info *di, u8 reg)
@@ -183,7 +183,7 @@ static int bq27x00_battery_read_charge(struct bq27x00_device_info *di, u8 reg)
 }
 
 /*
- * Return the battery Nominal available capaciy in 쨉Ah
+ * Return the battery Nominal available capaciy in µAh
  * Or < 0 if something fails.
  */
 static inline int bq27x00_battery_read_nac(struct bq27x00_device_info *di)
@@ -192,7 +192,7 @@ static inline int bq27x00_battery_read_nac(struct bq27x00_device_info *di)
 }
 
 /*
- * Return the battery Last measured discharge in 쨉Ah
+ * Return the battery Last measured discharge in µAh
  * Or < 0 if something fails.
  */
 static inline int bq27x00_battery_read_lmd(struct bq27x00_device_info *di)
@@ -201,7 +201,7 @@ static inline int bq27x00_battery_read_lmd(struct bq27x00_device_info *di)
 }
 
 /*
- * Return the battery Initial last measured discharge in 쨉Ah
+ * Return the battery Initial last measured discharge in µAh
  * Or < 0 if something fails.
  */
 static int bq27x00_battery_read_ilmd(struct bq27x00_device_info *di)
@@ -227,7 +227,7 @@ static int bq27x00_battery_read_ilmd(struct bq27x00_device_info *di)
 }
 
 /*
- * Return the battery Available energy in 쨉Wh
+ * Return the battery Available energy in µWh
  * Or < 0 if something fails.
  */
 static int bq27x00_battery_read_energy(struct bq27x00_device_info *di)
@@ -360,7 +360,7 @@ static void bq27x00_battery_poll(struct work_struct *work)
 }
 
 /*
- * Return the battery average current in 쨉A
+ * Return the battery average current in µA
  * Note that current can be negative signed as well
  * Or 0 if something fails.
  */
