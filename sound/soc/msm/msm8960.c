@@ -70,7 +70,7 @@
 #define JACK_US_EURO_SEL_GPIO 35
 
 
-#ifdef CONFIG_KTTECH_SOUND //CONFIG_KTTECH_SOUND_SPK_MSMGPIO - hw versionÀ¸·Î Ã³¸®
+#ifdef CONFIG_KTTECH_SOUND //CONFIG_KTTECH_SOUND_SPK_MSMGPIO - hw version쨍쨌 쨀쨍짰
 #define SPK_PAMP_GPIO (52)
 static int msm8960_ext_spk_configured;
 #endif
